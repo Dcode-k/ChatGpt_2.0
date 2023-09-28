@@ -1,0 +1,49 @@
+.chatpart_container{
+    position: relative;
+    background-color:#343541;
+    height: 100vh;
+    width: calc(100% - 250px);
+    
+}
+
+.main_container{
+  
+}
+
+.search_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 40px;
+   background-color:#40414f;
+   border-radius: 10px;
+   height: 60px;
+   width: 55vw;
+   padding: 0 30px;
+   margin:0 12vw;
+}
+
+.search_input{
+    font-size: 20px;
+ color: white;
+  background-color:#40414f;
+  border-style: none;
+  height: 100%;
+}
+
+.search_input::placeholder{
+    font-weight: bold;
+    color: #575867; ;
+}
+
+.search_input:focus{
+    outline: none;
+}
+
+.sendbtn{
+    font-size:20px;
+    color:#575867 ;
+}
+
+

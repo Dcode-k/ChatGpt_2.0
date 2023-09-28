@@ -1,0 +1,40 @@
+.messages_container{
+     
+}
+
+.usermessage_container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 12vw;
+}
+
+.user_avatar{
+   width: 30px;
+   height: 30px;
+   background-color: #575867;
+}
+
+.user_message{
+      color: whitesmoke;
+      font-size: 18px;
+}
+
+.chatgptmessage_container{
+    padding: 20px 12vw;
+    background-color: #444654;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.chatgpt_avatar{
+    width: 30px;
+    height: 30px;
+    background-color: greenyellow;
+}
+
+.chatgpt_message{
+     color: whitesmoke;
+     font-size: 18px;
+}
