@@ -7,10 +7,9 @@ const ChatPart = () => {
   const [searchPrompt, setSearchPrompt] = useState("");
   const [chatLog, setChatLog] = useState([]);
 
-// function clearAllChats(){
-//   setChatLog([]);
-// }
 
+
+//handelsearchSubmit function
   async function handleSearchSubmit(e) {
     e.preventDefault();
     const userChatLog = [
@@ -19,8 +18,8 @@ const ChatPart = () => {
     ];
     setSearchPrompt("");
     setChatLog(userChatLog);
-    
-    const response = await fetch("http://localhost:3001", {
+     console.log(searchPrompt)
+    const response = await fetch("https://chatgpt-server-428w.onrender.com", {
       method: "post",
       headers: {
         "content-type": "application/json",
@@ -30,9 +29,11 @@ const ChatPart = () => {
       }),
     });
     const data = await response.json();
-    data &&
-      setChatLog([...userChatLog, { user: "gpt", message: `${data.message}` }]);
+    console.log(data);
+    data && setChatLog([...userChatLog, { user: "gpt", message: `${data.message}` }]);
   }
+
+
   return (
     <div className={styles.chatpart_container}>
       <div className={styles.main_container}>
@@ -40,6 +41,7 @@ const ChatPart = () => {
           <ChatMessage key={index} messageLog={log} />
         ))}
       </div>
+      <div className={styles.subpart}>
       <div className={styles.search_container}>
         <form onSubmit={(e) => handleSearchSubmit(e)}>
           <input
@@ -54,7 +56,8 @@ const ChatPart = () => {
           <RiSendPlane2Fill />
         </span>
       </div>
-    </div>
+      </div>
+       </div>
   );
 };
 

@@ -1,0 +1,13 @@
+.header_container{
+    background-color: #000000;
+    color: white;
+    display: flex;
+    width: 100vw;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}

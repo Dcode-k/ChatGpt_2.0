@@ -13,10 +13,10 @@ const SideBar=()=>{
              </div>
           </div>
           <div>
-
           </div>
         </div>
     )
 }
+
 
 export default SideBar;
