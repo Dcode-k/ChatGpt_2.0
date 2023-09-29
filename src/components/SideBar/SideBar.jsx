@@ -1,11 +1,12 @@
 import styles from './SideBar.module.css'
 import {TbLayoutSidebarLeftCollapse} from 'react-icons/tb'
 import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeModel } from '../../utils/modelSlice'
 
 const SideBar=()=>{
   const [models,setModels]=useState();
-  const [currentModel,setCurrentModel]=useState("gpt-3.5-turbo-instruct");
-  console.log(currentModel);
+  const dispatch=useDispatch();
   useEffect(() => {
     async function fetchModels(){
       const response =await fetch('http://localhost:3001/models');
@@ -27,7 +28,7 @@ const SideBar=()=>{
           </div>
           <div className={styles.model_container}>
             <label htmlFor="models">Select a model</label>
-             <select name="models" id="models" onChange={(e)=>setCurrentModel(e.target.value)}>
+             <select name="models" id="models" onChange={(e)=>dispatch(changeModel(e.target.value))}>
               {models && models.models.map((model)=>(
                 <option key={model.id} value={model.id}>{model.id}</option>
               ))}

@@ -2,10 +2,12 @@ import { useState } from "react";
 import styles from "./ChatPart.module.css";
 import { RiSendPlane2Fill } from "react-icons/ri";
 import ChatMessage from "../ChatMessage/ChatMessage";
+import {useSelector} from 'react-redux'
 
 const ChatPart = () => {
   const [searchPrompt, setSearchPrompt] = useState("");
   const [chatLog, setChatLog] = useState([]);
+  const currentModel=useSelector((store)=>store.model.currentModel);
 
 // function clearAllChats(){
 //   setChatLog([]);
@@ -27,6 +29,7 @@ const ChatPart = () => {
       },
       body: JSON.stringify({
         message: searchPrompt,
+        model:currentModel,
       }),
     });
     const data = await response.json();
@@ -39,16 +42,6 @@ const ChatPart = () => {
         {chatLog.map((log, index) => (
           <ChatMessage key={index} messageLog={log} />
         ))}
-        {/* <div className={styles.messages_container}>
-          <div className={styles.usermessage_container}>
-            <div className={styles.user_avatar}></div>
-            <div className={styles.user_message}>hello</div>
-          </div>
-          <div className={styles.chatgptmessage_container}>
-            <div className={styles.chatgpt_avatar}></div>
-            <div className={styles.chatgpt_message}>How can I help you?</div>
-          </div>
-        </div> */}
       </div>
       <div className={styles.search_container}>
         <form onSubmit={(e) => handleSearchSubmit(e)}>
