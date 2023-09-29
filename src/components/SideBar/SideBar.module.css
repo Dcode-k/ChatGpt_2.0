@@ -30,22 +30,3 @@
     height: 50px;
     border-radius: 5px;
 }
-
-.model_container{
-  margin-top: 250px;
-  border: 2px solid #474749;
-  border-radius: 5px;
-  padding: 0 10px;
-  height: 50px;
-}
-
-.model_container select{
-   
-}
-
-.model_container label{
-   color: whitesmoke;
-}
-
-.model_container option{
-}
