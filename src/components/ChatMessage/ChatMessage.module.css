@@ -1,6 +1,4 @@
-.messages_container{
-     
-}
+
 
 .usermessage_container{
     display: flex;
@@ -10,8 +8,11 @@
 }
 
 .user_avatar{
-   width: 30px;
-   height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   width: 40px;
+   height: 40px;
    background-color: #575867;
 }
 
@@ -29,9 +30,12 @@
 }
 
 .chatgpt_avatar{
-    width: 30px;
-    height: 30px;
-    background-color: greenyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color:#19c37d ;
 }
 
 .chatgpt_message{

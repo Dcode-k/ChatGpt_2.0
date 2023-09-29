@@ -7,7 +7,9 @@
 }
 
 .main_container{
-   background-color: aqua;
+   /* background-color: aqua; */
+   height: 100vh;
+   overflow-y: scroll;
 }
 
 .search_container{
@@ -25,8 +27,12 @@
 }
 
 .search_input{
-    font-size: 20px;
- color: white;
+    display: flex;
+    align-items: center;
+    resize: none;
+    font-size: 15px;
+    width: 49vw;
+   color: white;
   background-color:#40414f;
   border-style: none;
   height: 100%;
